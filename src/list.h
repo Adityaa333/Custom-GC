@@ -11,5 +11,6 @@ typedef struct GC_Node
 }GC_Node;
 
 //void list_append(GC_Node **head, void *ptr, size_t size); 
+bool list_append(GC_Node **head, GC_Node **tail,  void *ptr, size_t size); 
 
 #endif

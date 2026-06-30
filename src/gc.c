@@ -4,6 +4,8 @@
 #include <stdlib.h>
 
 static GC_Node *gc_head = NULL;
+static GC_Node *gc_tail = NULL; 
+static bool is_initialized = false; 
 static size_t total_allocations = 0;
 static size_t total_memory_allocated = 0;
 static bool is_cleaned = false;
@@ -15,15 +17,22 @@ static void gc_atexit_handler(void)
 
 void gc_init(void) 
 {
+	if( is_initialized ) return; 
 	atexit(gc_atexit_handler);
+	is_initialized = true; 
 }
 
 void *gc_alloc(size_t size) 
 {
-	 void *ptr = malloc(size);
+	void *ptr = malloc(size);
     	if(!ptr) return NULL;
 
-    	list_append(&gc_head, ptr, size);
+	if (!list_append(&gc_head, &gc_tail, ptr, size)) 
+	{
+        	free(ptr); 
+        	return NULL;
+    	}
+
     	total_allocations++;
     	total_memory_allocated += size;
 
@@ -75,6 +84,7 @@ void gc_clean(bool print_report)
     	}
 
     	gc_head = NULL;
+	gc_tail = NULL; 
 
     	if (print_report) 
 	{
