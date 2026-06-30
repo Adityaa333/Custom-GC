@@ -16,14 +16,13 @@
 
 ---
 
-## Corrections / Refactoring
+## Corrections 
 
-- [ ] list_append() should return bool instead of void.
-- [ ] Free allocated memory if metadata allocation fails.
-- [ ] Prevent multiple gc_init() calls.
+- [x] list_append() should return bool instead of void.
+- [x] Free allocated memory if metadata allocation fails.
+- [x] Prevent multiple gc_init() calls.
 - [ ] Reset statistics after cleanup.
-- [ ] Decide behavior for gc_alloc(0).
-- [ ] Add tail pointer for O(1) insertion.
+- [x] Add tail pointer for O(1) insertion.
 
 ---
 
