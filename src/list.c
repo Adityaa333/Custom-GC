@@ -1,7 +1,7 @@
 #include "list.h"
-#include <stdlib.h>
+#include <stdlib.h> 
 
-void list_append( GC_Node **head,GC_Node **tail,  void *ptr, size_t size)
+bool list_append( GC_Node **head,GC_Node **tail,  void *ptr, size_t size)
 {
 	GC_Node *new_node = malloc(sizeof(GC_Node));
     	if(!new_node) return false;

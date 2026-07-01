@@ -2,6 +2,7 @@
 #define LIST_H
 
 #include <stddef.h>
+#include <stdbool.h>
 
 typedef struct GC_Node 
 {
