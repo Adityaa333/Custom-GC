@@ -30,8 +30,8 @@
 
 ### Memory APIs
 
-- [ ] gc_calloc()
-- [ ] gc_realloc()
+- [x] gc_calloc()
+- [x] gc_realloc()
 
 ### Statistics
 
