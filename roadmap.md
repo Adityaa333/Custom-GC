@@ -42,7 +42,7 @@
 
 ### Report System
 
-- [ ] Report flags
+- [x] Report flags
 
 Example
 
@@ -56,11 +56,11 @@ gc_clean(GC_REPORT_FULL);
 gc_clean(GC_SHOW_STATS | GC_SHOW_BLOCKS);
 ```
 
-- [ ] Optional colored output
+- [x] Optional colored output
 
 ### Metadata
 
-- [ ] Allocation ID
+- [x] Allocation ID
 
 ---
 
@@ -68,9 +68,9 @@ gc_clean(GC_SHOW_STATS | GC_SHOW_BLOCKS);
 
 ### Debugging
 
-- [ ] Store __FILE__
-- [ ] Store __LINE__
-- [ ] GC_ALLOC() macro
+- [x] Store __FILE__
+- [x] Store __LINE__
+- [x] GC_ALLOC() macro
 
 ### Performance
 
